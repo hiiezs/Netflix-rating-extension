@@ -1,0 +1,26 @@
+{
+  "name": "Netflix Ratings Extension",
+  "description": "Show IMDb, Rotten Tomatoes ratings of movies and shows on Netflix.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "pixel_bush.png"
+  },
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "pixel_bush.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://www.omdbapi.com/*"
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
